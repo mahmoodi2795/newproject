@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Variabes */
+        
+        $orange: #ffa600;
+        $grey:#f3f3f3;
+        $white: #fff;
+        $base-color:$orange;
+        /* Mixin's */
+        
+        @mixin transition {
+            -webkit-transition: all 0.5s ease-in-out;
+            -moz-transition: all 0.5s ease-in-out;
+            transition: all 0.5s ease-in-out;
+        }
+        
+        @mixin corners ($radius) {
+            -moz-border-radius: $radius;
+            -webkit-border-radius: $radius;
+            border-radius: $radius;
+            -khtml-border-radius: $radius;
+        }
+        
+        body {
+            background: $base-color;
+            font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+            height: 100%;
+        }
+        
+        .wrapper {
+            background-color: rgb(225, 30, 30);
+            margin: 30px auto;
+            color: $white;
+            text-align: center;
+            width: 1000px;
+        }
+        
+        h1,
+        h2,
+        h3 {
+            font-family: 'Roboto', sans-serif;
+            font-weight: 100;
+            font-size: 2.6em;
+            text-transform: uppercase;
+        }
+        
+        #seconds,
+        #tens {
+            font-size: 2em;
+        }
+        
+        button {
+            @include corners (5px);
+            background: $base-color;
+            color: $white;
+            border: solid 1px $white;
+            text-decoration: none;
+            box-shadow: 4px 10px 60px 2px #88888c;
+            cursor: pointer;
+            font-size: 1.2em;
+            padding: 18px 10px;
+            width: 180px;
+            margin: 10px;
+            outline: none;
+            &:hover {
+                @include transition;
+                background: $white;
+                border: solid 1px $white;
+                color: $base-color;
+            }
+        }
+        
+        body {
+            background-color: rgb(22, 220, 160);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <h1 class="kian">Stopwatch</h1>
+            <h2 class="mamad">Vanilla JavaScript Stopwatch</h2>
+            <p style="font-size: 60px;"><span id="seconds" style="font-size: 60px;">00</span>:<span style="font-size: 60px;" id="tens">00</span></p>
+            <button class="com" id="button-start">Start</button>
+            <button class="ahmad" id="button-stop">Stop</button>
+            <button id="button-reset">Reset</button>
+        </div>
+    </div>
+
+
+    <script src="script.js">
+    </script>
+
+
+</body>
+
+</html>
